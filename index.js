@@ -3,7 +3,7 @@ $(function () {
     $('form').submit(function () {
         $('#output').show();
         event.preventDefault();
-        const API_KEY = 'bc1087b75046410087041810240705';
+        const API_KEY = '';
         
         var cityInput = $('#ciudad').val();
         console.log(cityInput)
@@ -41,11 +41,11 @@ $(function () {
             console.log(event);
             console.log("Error en la busqueda");
             $('#output').html(
-                `<p class="fw-bold text-black">No hemos encontrado datos</p>
-                <img src="img/nofound.png" width="25%">`
+                `<p class="fw-bold text-white">No hemos encontrado datos</p>
+                <img src="img/nofound.webp" width="25%">`
             );
         });
-    
+        
         REQ.open('GET', `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityInput}`);
         
         REQ.send();
